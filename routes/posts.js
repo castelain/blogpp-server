@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/condition', async (req, res) => {
   const post = await Post.find(req.body);
-  if (!post) {
+  if (!post.length) {
     return res.status(404).send(`Can't find any post under the given condition.`);
   }
   return res.send(post);

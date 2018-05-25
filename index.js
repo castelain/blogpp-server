@@ -14,7 +14,7 @@ if (!config.get('jwt_key')) {
   process.exit(1);
 }
 
-mongoose.connect('mongodb://localhost/playground')
+mongoose.connect('mongodb://localhost/blogpp')
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...'));
 
