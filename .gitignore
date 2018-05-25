@@ -3,3 +3,6 @@ node_modules/
 # IDE / editor config
 .vscode/
 .idea/
+
+# REST Client test
+rest-test.txts
