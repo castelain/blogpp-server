@@ -27,7 +27,7 @@ app.use('/api/auth', auth);
 app.use('/api/posts', posts);
 
 // PORT
-const port = process.env.BLOGPP_PORT || 3000;
+const port = config.get('port') || 3000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });

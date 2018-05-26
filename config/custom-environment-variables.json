@@ -1,3 +1,4 @@
 {
-  "jwt_key": "blogpp_jwt_key"
+  "jwt_key": "BLOGPP_JWT_KEY",
+  "port": "BLOGPP_PORT"
 }
