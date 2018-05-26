@@ -4,7 +4,6 @@ const users = require('./routes/users');
 const auth = require('./routes/auth');
 const posts = require('./routes/posts');
 const cors = require('./middleware/cors');
-const ueditor = require('ueditor');
 const path = require('path');
 const express = require('express');
 const app = express();
