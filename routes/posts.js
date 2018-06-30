@@ -6,23 +6,29 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const posts = await Post.find();
+  const posts = await Post.find()
+    .populate('author')
+    .populate('comments');
   res.send(posts);
 });
 
 router.get('/:id', async (req, res) => {
-  const post = await Post.findById(req.params.id);
+  const post = await Post.findById(req.params.id)
+    .populate('author')
+    .populate('comments');
   if (!post) return res.status(404).send('Post with the given id was not found.');
   // success, so return the post
   return res.send(post);
 });
 
 router.post('/condition', async (req, res) => {
-  const post = await Post.find(req.body);
-  if (!post.length) {
+  const posts = await Post.find(req.body)
+    .populate('author')
+    .populate('comments');
+  if (!posts.length) {
     return res.status(404).send(`Can't find any post under the given condition.`);
   }
-  return res.send(post);
+  return res.send(posts);
 });
 
 router.post('/', auth, async (req, res) => {

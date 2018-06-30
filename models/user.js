@@ -22,7 +22,13 @@ const userSchema = new mongoose.Schema({
     required: 5,
     minlength: 5,
     maxlength: 1024,
-
+  },
+  isAdmin: {
+    type: mongoose.SchemaTypes.Boolean,
+    default: false
+  },
+  bio: {
+    type: String
   }
 });
 
@@ -41,6 +47,7 @@ function validateUser(user) {
     name: Joi.string().min(5).max(50).required(),
     email: Joi.string().min(5).max(255).required().email(),
     password: Joi.string().min(5).max(255).required(),
+    bio: Joi.string()
   };
 
   return Joi.validate(user, schema);

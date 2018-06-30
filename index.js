@@ -1,8 +1,11 @@
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
 const config = require('config');
 const mongoose = require('mongoose');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const posts = require('./routes/posts');
+const comments = require('./routes/comments');
 const cors = require('./middleware/cors');
 const path = require('path');
 const express = require('express');
@@ -25,6 +28,7 @@ app.use(cors);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use('/api/posts', posts);
+app.use('/api/comments', comments);
 
 // PORT
 const port = config.get('port') || 3000;
