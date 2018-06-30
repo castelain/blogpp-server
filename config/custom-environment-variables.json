@@ -1,4 +1,4 @@
 {
-  "jwt_key": "BLOGPP_JWT_KEY",
-  "port": "BLOGPP_PORT"
+  "jwt_key": "key",
+  "port": "9001"
 }
